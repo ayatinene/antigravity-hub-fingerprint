@@ -1,0 +1,51 @@
+name: Update official Hub fingerprint
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update.yml'
+      - 'scripts/build_fingerprint.py'
+      - 'tests/test_build_fingerprint.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hub-fingerprint-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install official package extraction tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y 7zip
+          7z i | head -n 12
+
+      - name: Test fingerprint extraction and update guards
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Check Google Hub releases and extract Windows x64 CL
+        run: python3 scripts/build_fingerprint.py
+
+      - name: Commit verified metadata when changed
+        run: |
+          git add latest.json history/
+          if git diff --cached --quiet; then
+            echo 'No fingerprint changes'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: update official Windows x64 Hub fingerprint'
+          git push
