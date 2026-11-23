@@ -1,9 +1,9 @@
 {
-  "version": "2.34.0",
-  "cl": "1026637980",
+  "version": "2.35.0",
+  "cl": "1028447422",
   "os_type": "windows",
   "arch": "amd64",
-  "execution_id": "5887025308631040",
-  "installer_sha256": "7c34f5aecbb269a182b12f63fd8f4f7e3bb4a893f23490d99735b137a7e881bd",
-  "source_url": "https://storage.googleapis.com/antigravity-public/antigravity-hub/2.34.0-5887025308631040/windows-x64/Antigravity-x64.exe"
+  "execution_id": "6394266482769920",
+  "installer_sha256": "14289414612ae336933a6963880b3996ab34f47d7d6f4951e0eae1871694050e",
+  "source_url": "https://storage.googleapis.com/antigravity-public/antigravity-hub/2.35.0-6394266482769920/windows-x64/Antigravity-x64.exe"
 }
