@@ -1,0 +1,9 @@
+{
+  "version": "2.35.2",
+  "cl": "1029311855",
+  "os_type": "windows",
+  "arch": "amd64",
+  "execution_id": "4585983447007232",
+  "installer_sha256": "1c66f68fa45e9ebc55aec5479617a9eeaa305ba8b16a1bee8327b8bad9d10258",
+  "source_url": "https://storage.googleapis.com/antigravity-public/antigravity-hub/2.35.2-4585983447007232/windows-x64/Antigravity-x64.exe"
+}
