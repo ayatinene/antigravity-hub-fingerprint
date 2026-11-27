@@ -1,0 +1,9 @@
+{
+  "version": "2.36.0",
+  "cl": "1031268331",
+  "os_type": "windows",
+  "arch": "amd64",
+  "execution_id": "5596661662220288",
+  "installer_sha256": "8ccd8a7a7239b779703f9c3a549a14f74ea62bf7ecf70f4f0e783397c32b4587",
+  "source_url": "https://storage.googleapis.com/antigravity-public/antigravity-hub/2.36.0-5596661662220288/windows-x64/Antigravity-x64.exe"
+}
